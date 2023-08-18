@@ -1,0 +1,10 @@
+local loaded = true
+while loaded do
+if workspace:FindFirstChild("CombatFolder") then
+print("In battle")
+else
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+Character.HumanoidRootPart.CFrame = CFrame.new(6281,223,9419)
+wait(2)
+end
