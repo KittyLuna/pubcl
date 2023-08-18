@@ -1,0 +1,17 @@
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local HRP = Character:FindFirstChild("HumanoidRootPart")
+
+local loaded = true
+
+while wait(0.15) and loaded do
+local CombatFolder = workspace:FindFirstChild("CombatFolder")
+if CombatFolder ~= nil then
+local MyFol = CombatFolder:FindFirstChild(Player.Name):GetDescendants()
+for i,v in pairs(MyFol) do
+if v:IsA("BasePart") and v.Name == "HitBox" or v.Name == "Base" then
+HRP.CFrame = v.CFrame
+end
+end
+end
+end
